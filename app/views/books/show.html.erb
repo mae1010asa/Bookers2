@@ -1,0 +1,23 @@
+<% content_for :right_column do %>
+    <h2>Book detail</h2>
+    <table class="table">
+      <tbody>
+        <tr>
+          <td><%= link_to user_path(@book.user) do %>
+                <%= image_tag @book.user.get_profile_image(100, 100), size: "100x100" %><br>
+                <span><%= @book.user.name %></span>
+              <% end %>
+          </td>
+          <td><%= link_to @book.title, book_path(@book) %></td>
+          <td><%= @book.body %></td>
+          <% if @book.user == current_user %>
+            <td><%= link_to "Edit", edit_book_path(@book), class: "btn btn-success" %></td>
+            <td><%= link_to "Destroy", book_path(@book), method: :delete, class: "btn btn-danger", data: {confirm:"Are you sure?"} %></td>
+          <% end %>
+        </tr>
+      </tbody>
+    </table>
+<% end %>
+
+<%= render "books/new", user: @book.user %>
+

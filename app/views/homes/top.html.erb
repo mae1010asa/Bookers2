@@ -1,0 +1,20 @@
+<div class="container" style="max-width: 600px;">
+  <div class="mx-auto">
+    <%= render 'welcome' %>
+      <p class="text-start"> "In" <i class="fa-solid fa-book"></i><strong>Bookers</strong> ,<br>
+        you can share and exchange your opinions , inpressions , and emotions<br>
+        about various books!</p>
+
+
+      <ul class="list-unstyled">
+        <li class="w-75 mx-auto m-3">    
+          <%= link_to "Log in", new_user_session_path, class:"btn btn-info btn-block" %>
+        </li>
+        <li class="w-75 mx-auto m-3">
+          <%= link_to "Sign up", new_user_registration_path, class:"btn btn-success btn-block" %>
+        </li>
+      </ul>
+  </div>
+</div>
+
+
